@@ -29,6 +29,7 @@ class InfoLayer2 : AppCompatActivity() {
         setContentView(R.layout.activity_info_layer2)
 
         val selectedObject = intent.getStringExtra("object")
+
         Log.i("debug", "${selectedObject}")
         val bitmap: Bitmap = Bitmap.createBitmap(1000, 800, Bitmap.Config.ARGB_8888)
         val canvas: Canvas = Canvas(bitmap)

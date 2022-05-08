@@ -162,10 +162,13 @@ class Activity2 : AppCompatActivity(), TextToSpeech.OnInitListener {
                         if (lastDuration < 300 && interval < 300 && currentDuration < 300) // Double click
                         {
                             Log.i("data", "double click detected")
-                            val intent = Intent(this@Activity2, InfoLayer2::class.java).apply {
-                                putExtra("object", touchedItem)
+                            if (touchedItem != "b" && touchedItem != "")
+                            {
+                                val intent = Intent(this@Activity2, InfoLayer2::class.java).apply {
+                                    putExtra("object", touchedItem)
+                                }
+                                ContextCompat.startActivity(this@Activity2, intent, null)
                             }
-                            ContextCompat.startActivity(this@Activity2, intent, null)
 
                         }
                         lastDuration = currentDuration
